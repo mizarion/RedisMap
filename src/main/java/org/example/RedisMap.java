@@ -37,7 +37,7 @@ public class RedisMap implements Map<String, String> {
 
     @Override
     public boolean isEmpty() {
-        return size() == 0;
+        return jedis.keys(keyPrefix + ":*").isEmpty();
     }
 
     @Override

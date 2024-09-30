@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RedisMapTest {
 
     private final RedisMap redisMap = new RedisMap();
@@ -69,6 +67,7 @@ class RedisMapTest {
         Assertions.assertEquals(1, redisMap.size());
     }
 
+    @SuppressWarnings("all")
     @Test
     void clear() {
         redisMap.put("key", "value");
@@ -77,6 +76,7 @@ class RedisMapTest {
         Assertions.assertTrue(redisMap.isEmpty());
     }
 
+    @SuppressWarnings("all")
     @Test
     void clearEmptyMap() {
         Assertions.assertTrue(redisMap.isEmpty());
@@ -90,6 +90,4 @@ class RedisMapTest {
         redisMap.put("key", "value");
         Assertions.assertEquals(1, redisMap.keySet().size());
     }
-
-
 }
